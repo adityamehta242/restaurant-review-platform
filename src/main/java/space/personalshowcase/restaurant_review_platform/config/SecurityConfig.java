@@ -1,4 +1,4 @@
-package space.personalshowcase.restaurant_review_platform.domain.entities;
+package space.personalshowcase.restaurant_review_platform.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
