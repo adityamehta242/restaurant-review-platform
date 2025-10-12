@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import space.personalshowcase.restaurant_review_platform.domain.entities.Photo;
-import space.personalshowcase.restaurant_review_platform.domain.entities.dtos.PhotoDto;
+import space.personalshowcase.restaurant_review_platform.domain.dtos.PhotoDto;
 import space.personalshowcase.restaurant_review_platform.mappers.PhotoMapper;
 import space.personalshowcase.restaurant_review_platform.services.PhotoService;
 

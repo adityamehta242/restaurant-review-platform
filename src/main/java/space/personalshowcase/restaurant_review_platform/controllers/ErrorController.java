@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
-import space.personalshowcase.restaurant_review_platform.domain.entities.dtos.ErrorDto;
+import space.personalshowcase.restaurant_review_platform.domain.dtos.ErrorDto;
 import space.personalshowcase.restaurant_review_platform.exceptions.BaseException;
 import space.personalshowcase.restaurant_review_platform.exceptions.StorageException;
 

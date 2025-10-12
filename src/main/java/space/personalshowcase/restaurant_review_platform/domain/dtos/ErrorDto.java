@@ -1,4 +1,4 @@
-package space.personalshowcase.restaurant_review_platform.domain.entities.dtos;
+package space.personalshowcase.restaurant_review_platform.domain.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
