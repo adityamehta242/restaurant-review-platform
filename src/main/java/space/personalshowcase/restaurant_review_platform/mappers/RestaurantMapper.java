@@ -15,9 +15,9 @@ public interface RestaurantMapper {
 
     RestaurantCreateUpdateRequest toRestaurantCreateUpdateRequest(RestaurantCreateUpdateRequestDto dto);
 
-    RestaurantDto toRestaurant(Restaurant restaurant);
+    RestaurantDto toRestaurantDto(Restaurant restaurant);
 
     @Mapping(target = "latitude",expression = "java(geoPoint.getLat())")
     @Mapping(target = "longitude",expression = "java(geoPoint.getLon())")
-    GeoPointDto toGeoPoint(GeoPoint geoPoint);
+    GeoPointDto toGeoPointDto(GeoPoint geoPoint);
 }
