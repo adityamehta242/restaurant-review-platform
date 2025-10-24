@@ -76,7 +76,7 @@ public class RestaurantDataLoaderTest {
                         "+44 20 7123 4567",
                         createAddress("12", "Gerrard Street", null, "London", "Greater London", "W1D 5PR", "United Kingdom"),
                         createStandardOperatingHours("11:30", "23:00", "11:30", "23:30"),
-                        "golden-dragon.png"
+                        "amirali-mirhashemian.jpg"
                 ),
                 createRestaurant(
                         "La Petite Maison",
@@ -84,7 +84,7 @@ public class RestaurantDataLoaderTest {
                         "+44 20 7234 5678",
                         createAddress("54", "Brook Street", null, "London", "Greater London", "W1K 4HR", "United Kingdom"),
                         createStandardOperatingHours("12:00", "22:30", "12:00", "23:00"),
-                        "la-petit-maison.png"
+                        "amirali-mirhashemian.jpg"
                 ),
                 createRestaurant(
                         "Raj Pavilion",
@@ -92,7 +92,7 @@ public class RestaurantDataLoaderTest {
                         "+44 20 7345 6789",
                         createAddress("27", "Brick Lane", null, "London", "Greater London", "E1 6PU", "United Kingdom"),
                         createStandardOperatingHours("12:00", "23:00", "12:00", "23:30"),
-                        "raj-pavilion.png"
+                        "amirali-mirhashemian.jpg"
                 ),
                 createRestaurant(
                         "Sushi Master",
@@ -100,7 +100,7 @@ public class RestaurantDataLoaderTest {
                         "+44 20 7456 7890",
                         createAddress("8", "Poland Street", null, "London", "Greater London", "W1F 8PR", "United Kingdom"),
                         createStandardOperatingHours("11:30", "22:00", "11:30", "22:30"),
-                        "sushi-master.png"
+                        "amirali-mirhashemian.jpg"
                 ),
                 createRestaurant(
                         "The Rustic Olive",
@@ -108,7 +108,7 @@ public class RestaurantDataLoaderTest {
                         "+44 20 7567 8901",
                         createAddress("92", "Dean Street", null, "London", "Greater London", "W1D 3SR", "United Kingdom"),
                         createStandardOperatingHours("11:00", "23:00", "11:00", "23:30"),
-                        "rustic-olive.png"
+                        "amirali-mirhashemian.jpg"
                 ),
                 createRestaurant(
                         "El Toro",
@@ -116,7 +116,7 @@ public class RestaurantDataLoaderTest {
                         "+44 20 7678 9012",
                         createAddress("15", "Charlotte Street", null, "London", "Greater London", "W1T 1RH", "United Kingdom"),
                         createStandardOperatingHours("12:00", "23:00", "12:00", "23:30"),
-                        "el-toro.png"
+                        "amirali-mirhashemian.jpg"
                 ),
                 createRestaurant(
                         "The Greek House",
@@ -124,7 +124,7 @@ public class RestaurantDataLoaderTest {
                         "+44 20 7789 0123",
                         createAddress("32", "Store Street", null, "London", "Greater London", "WC1E 7BS", "United Kingdom"),
                         createStandardOperatingHours("12:00", "22:30", "12:00", "23:00"),
-                        "greek-house.png"
+                        "amirali-mirhashemian.jpg"
                 ),
                 createRestaurant(
                         "Seoul Kitchen",
@@ -132,7 +132,7 @@ public class RestaurantDataLoaderTest {
                         "+44 20 7890 1234",
                         createAddress("71", "St John Street", null, "London", "Greater London", "EC1M 4AN", "United Kingdom"),
                         createStandardOperatingHours("11:30", "22:00", "11:30", "22:30"),
-                        "seoul-kitchen.png"
+                        "amirali-mirhashemian.jpg"
                 ),
                 createRestaurant(
                         "Thai Orchid",
@@ -140,7 +140,7 @@ public class RestaurantDataLoaderTest {
                         "+44 20 7901 2345",
                         createAddress("45", "Warren Street", null, "London", "Greater London", "W1T 6AD", "United Kingdom"),
                         createStandardOperatingHours("11:00", "22:30", "11:00", "23:00"),
-                        "thai-orchid.png"
+                        "amirali-mirhashemian.jpg"
                 ),
                 createRestaurant(
                         "The Burger Joint",
@@ -148,7 +148,7 @@ public class RestaurantDataLoaderTest {
                         "+44 20 7012 3456",
                         createAddress("88", "Commercial Street", null, "London", "Greater London", "E1 6LY", "United Kingdom"),
                         createStandardOperatingHours("11:00", "23:00", "11:00", "23:30"),
-                        "burger-joint.png"
+                        "amirali-mirhashemian.jpg"
                 )
         );
     }

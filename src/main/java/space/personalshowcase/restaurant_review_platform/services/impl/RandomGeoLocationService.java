@@ -10,10 +10,10 @@ import java.util.Random;
 @Service
 public class RandomGeoLocationService implements GeoLocationService {
 
-    private static double MIN_LATITUDE= 6.75f;
-    private static double MAX_LATITUDE= 37.10f;
-    private static double MIN_LONGITUDE= 68.12f;
-    private static double MAX_LONGITUDE= 97.42f;
+    private static final double MIN_LATITUDE= 6.75f;
+    private static final double MAX_LATITUDE= 37.10f;
+    private static final double MIN_LONGITUDE= 68.12f;
+    private static final double MAX_LONGITUDE= 97.42f;
 
     @Override
     public GeoLocation getLocation(Address address) {
