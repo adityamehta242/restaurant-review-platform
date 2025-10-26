@@ -5,6 +5,8 @@ import org.springframework.data.domain.Pageable;
 import space.personalshowcase.restaurant_review_platform.domain.RestaurantCreateUpdateRequest;
 import space.personalshowcase.restaurant_review_platform.domain.entities.Restaurant;
 
+import java.util.Optional;
+
 public interface RestaurantService {
     Restaurant CreateRestaurant(RestaurantCreateUpdateRequest restaurantCreateUpdateRequest);
 
@@ -16,4 +18,6 @@ public interface RestaurantService {
             Float radius,
             Pageable pageable
     );
+
+    Optional<Restaurant> getRestaurant(String id);
 }

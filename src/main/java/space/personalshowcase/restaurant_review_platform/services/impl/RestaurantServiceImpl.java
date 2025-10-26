@@ -16,6 +16,7 @@ import space.personalshowcase.restaurant_review_platform.services.RestaurantServ
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -78,5 +79,10 @@ public class RestaurantServiceImpl implements RestaurantService {
             }
 
             return restaurantRepository.findAll(pageable);
+    }
+
+    @Override
+    public Optional<Restaurant> getRestaurant(String id) {
+        return restaurantRepository.findById(id);
     }
 }
