@@ -10,6 +10,7 @@ import space.personalshowcase.restaurant_review_platform.domain.RestaurantCreate
 import space.personalshowcase.restaurant_review_platform.domain.entities.Address;
 import space.personalshowcase.restaurant_review_platform.domain.entities.Photo;
 import space.personalshowcase.restaurant_review_platform.domain.entities.Restaurant;
+import space.personalshowcase.restaurant_review_platform.exceptions.RestaurantNotFoundException;
 import space.personalshowcase.restaurant_review_platform.repositories.RestaurantRepository;
 import space.personalshowcase.restaurant_review_platform.services.GeoLocationService;
 import space.personalshowcase.restaurant_review_platform.services.RestaurantService;
@@ -84,5 +85,30 @@ public class RestaurantServiceImpl implements RestaurantService {
     @Override
     public Optional<Restaurant> getRestaurant(String id) {
         return restaurantRepository.findById(id);
+    }
+
+    @Override
+    public Restaurant updateRestaurants(String id, RestaurantCreateUpdateRequest request) {
+        Restaurant restaurant = getRestaurant(id)
+                .orElseThrow(()-> new RestaurantNotFoundException("Restaurant with Id does not exists: " + id));
+
+        GeoLocation newGeoLocation = geoLocationService.getLocation(request.getAddress());
+        GeoPoint newGeoPoint = new GeoPoint(newGeoLocation.getLatitude() , newGeoLocation.getLongitude());
+
+        List<String> photoIds = request.getPhotoIds();
+        List<Photo> photos = photoIds.stream().map(photoUrl -> Photo.builder()
+                .url(photoUrl)
+                .uploadDate(LocalDateTime.now())
+                .build()).toList();
+
+        restaurant.setName(request.getName());
+        restaurant.setCuisineType(request.getCuisineType());
+        restaurant.setContactInformation(request.getContactInformation());
+        restaurant.setAddress(request.getAddress());
+        restaurant.setGeoLocation(newGeoPoint);
+        restaurant.setOperatingHours(request.getOperatingHours());
+        restaurant.setPhotos(photos);
+
+        return restaurantRepository.save(restaurant);
     }
 }
