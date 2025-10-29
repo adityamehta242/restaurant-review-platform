@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 import space.personalshowcase.restaurant_review_platform.domain.dtos.ErrorDto;
 import space.personalshowcase.restaurant_review_platform.exceptions.BaseException;
+import space.personalshowcase.restaurant_review_platform.exceptions.RestaurantNotFoundException;
 import space.personalshowcase.restaurant_review_platform.exceptions.StorageException;
 
 import java.util.stream.Collectors;
@@ -68,6 +69,17 @@ public class ErrorController {
                 .build();
 
         return  new ResponseEntity<>(errorDto , HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(RestaurantNotFoundException.class)
+    public ResponseEntity<ErrorDto> handleRestaurantNotFoundException(RestaurantNotFoundException ex)
+    {
+        log.error("Caught RestaurantNotFoundException: " , ex);
+        ErrorDto errorDto = ErrorDto.builder()
+                .status(HttpStatus.NOT_FOUND.value())
+                .message("The Specified restaurant wasn't found.")
+                .build();
+        return new ResponseEntity<>(errorDto, HttpStatus.NOT_FOUND);
     }
 
 }
