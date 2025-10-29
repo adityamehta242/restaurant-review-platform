@@ -68,4 +68,9 @@ public class RestaurantController {
         return  new ResponseEntity<>(updatedRestaurantDto , HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteRestaurant(@PathVariable("id") String id){
+        restaurantService.deleteRestaurant(id);
+        return ResponseEntity.noContent().build();
+    }
 }
