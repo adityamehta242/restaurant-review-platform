@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import space.personalshowcase.restaurant_review_platform.domain.RestaurantCreateUpdateRequest;
@@ -51,12 +52,20 @@ public class RestaurantController {
         return searchedRestaurants.map(restaurantMapper::toRestaurantSummaryDto);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<RestaurantDto> getRestaurant(
             @PathVariable("id") String id
     ){
         return restaurantService.getRestaurant(id).map(restaurant -> ResponseEntity.ok(restaurantMapper.toRestaurantDto(restaurant)))
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/{id}")
+    public  ResponseEntity<RestaurantDto> updateRestaurants(@PathVariable("id") String id , @RequestBody @Valid RestaurantCreateUpdateRequestDto request){
+        RestaurantCreateUpdateRequest convertedRequest = restaurantMapper.toRestaurantCreateUpdateRequest(request);
+        Restaurant restaurant  =  restaurantService.updateRestaurants(id , convertedRequest);
+        RestaurantDto updatedRestaurantDto = restaurantMapper.toRestaurantDto(restaurant);
+        return  new ResponseEntity<>(updatedRestaurantDto , HttpStatus.OK);
     }
 
 }
