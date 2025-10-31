@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import space.personalshowcase.restaurant_review_platform.domain.dtos.ErrorDto;
 import space.personalshowcase.restaurant_review_platform.exceptions.BaseException;
 import space.personalshowcase.restaurant_review_platform.exceptions.RestaurantNotFoundException;
+import space.personalshowcase.restaurant_review_platform.exceptions.ReviewNotAllowedException;
 import space.personalshowcase.restaurant_review_platform.exceptions.StorageException;
 
 import java.util.stream.Collectors;
@@ -82,4 +83,15 @@ public class ErrorController {
         return new ResponseEntity<>(errorDto, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(ReviewNotAllowedException.class)
+    public  ResponseEntity<ErrorDto> handleReviewNotAllowedException(ReviewNotAllowedException ex){
+        log.error("Caught ReviewNotAllowedException: "+ex);
+
+        ErrorDto error = ErrorDto.builder()
+                .message("The specified review cannot be created or updated.")
+                .status(HttpStatus.BAD_REQUEST.value())
+                .build();
+
+        return new ResponseEntity<>(error , HttpStatus.BAD_REQUEST);
+    }
 }
