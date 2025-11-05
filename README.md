@@ -14,4 +14,4 @@ A platform where users can rate and review restaurants.
 
 
 **Aditya Mehta**
-- GitHub: [@adityamehta242](https://github.com/adityamehta242)
+- GitHub: [@adityamehta242](https://github.com/adimehtaa)
